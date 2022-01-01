@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function loginForm(){
-        return view('auth.login');
+        return view('shop.auth.login-register');
     }
 
     public function login(Request $request){
@@ -22,18 +22,14 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($request->only('user_id', 'password'))) {
-            
             return redirect('/');
-
         }
         
         return redirect()->route('login')->with('message', 'Incorrect username or password.');
-
-        // return Redirect::to('login')->with('message' => 'Incorrect username or password.');
     }
 
     public function registerForm(){
-        return view('auth.register');
+        return view('shop.auth.login-register');
     }
 
     public function register(Request $request){
@@ -42,6 +38,9 @@ class AuthController extends Controller
             'name'  => "required|max:32",
             'user_id'  => "required|max:32",
             'password'  => "required|min:8|max:156|confirmed",
+        ],
+        [
+            'user_id.required' => 'The mobile field is required.',
         ]);
 
         $user = Customer::create([
@@ -54,6 +53,5 @@ class AuthController extends Controller
             return 'Account register Successfull.';
         }
 
-        // return $request->all();
     }
 }

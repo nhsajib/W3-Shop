@@ -10,14 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
-
         <!-- Responsive CSS -->
         <link rel="stylesheet" href="{{ mix('/css/shop.css') }}">
-
         <!-- Modernizr js -->
         <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
-
-        {{ dd($settings->toArray()) }}
 
     </head>
     <body>
@@ -194,6 +190,8 @@
 
         <!-- Main/Activator js -->
         <script src="{{ mix('js/shop.js') }}"></script>
+
+        @yield('scripts')
     </body>
 
 <!-- index30:23-->
