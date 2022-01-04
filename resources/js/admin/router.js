@@ -24,6 +24,13 @@ const routes = [
         isAuth: true,
       },
     },
+    { path: '/admin/categories',
+      component: require('../../components/page/Categories.vue').default,
+      meta:{
+        title: 'Categories',
+        isAuth: true,
+      },
+    },
 ];
 
 const router = new VueRouter({

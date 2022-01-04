@@ -20,8 +20,16 @@ Route::group(['middleware' => 'api', 'prefix' => 'admin'], function() {
     Route::post('refresh', [App\Http\Controllers\Admin\Auth\AuthController::class, 'refresh']);
     Route::get('me', [App\Http\Controllers\Admin\Auth\AuthController::class, 'me']);
     Route::post('register', [App\Http\Controllers\Admin\Auth\AuthController::class, 'register']);
-});
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+
+    //FilePond File Upload
+    Route::post('/upload/temp/image/file-pond/{width}/{height}', [App\Http\Controllers\Admin\FilePondController::class, 'storeImage']);
+    Route::post('/upload/temp/file/file-pond', [App\Http\Controllers\Admin\FilePondController::class, 'storeFile']);
+    Route::put('/upload/temp/file-pond/remove', [App\Http\Controllers\Admin\FilePondController::class, 'destroy']);
+
+    //Categories
+    Route::apiResource('categories', App\Http\Controllers\Admin\CategoriesController::class);
+
+    // Dependency 
+    Route::put('/form/dependency/categories', [App\Http\Controllers\Admin\FormDependencyController::class, 'categories']);
+});

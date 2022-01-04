@@ -12,6 +12,8 @@
     "devDependencies": {
         "axios": "^0.21",
         "bootstrap": "^4.6.1",
+        "browser-sync": "^2.27.7",
+        "browser-sync-webpack-plugin": "^2.3.0",
         "jquery": "^3.6.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
@@ -26,5 +28,10 @@
         "vue-template-compiler": "^2.6.12",
         "vuex": "^3.6.2"
     },
-    "dependencies": {}
+    "dependencies": {
+        "filepond": "^4.30.3",
+        "vform": "^2.1.2",
+        "vue-filepond": "^6.0.0",
+        "vue-select": "^3.16.0"
+    }
 }

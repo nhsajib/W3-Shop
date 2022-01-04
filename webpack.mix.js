@@ -11,7 +11,7 @@ mix.js([
 
 mix.styles([
         'resources/css/admin/vendor.bundle.base.css',
-        'resources/css/admin/style.css',
+        // 'resources/css/admin/style.css',
     ], 'public/css/admin.css')
 
 
@@ -38,6 +38,9 @@ mix.js([
     'resources/js/shop/main.js',
 ], 'public/js/shop.js')
 
+// mix.browserSync('http://127.0.0.1:8000');
+
 if (mix.inProduction()) {
     mix.version();
 }
+

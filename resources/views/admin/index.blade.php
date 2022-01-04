@@ -11,10 +11,13 @@
     <script src="{{ mix('js/admin.js') }}" defer></script>
 
     <link rel="stylesheet" href="{{ mix('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 
     <title>{{ config('app.name') }}</title>
 </head>
 <body>
+
+  {{-- {{ Storage::get('example.txt'); }} --}}
 
   <div id="app">
     <index-component/>
